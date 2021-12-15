@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gericopipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gericopipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: gericopipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: gericopipelinesjavascriptdocker 
+          image: gericocontainerregistry.azurecr.io/gericopipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
